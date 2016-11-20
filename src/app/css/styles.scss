@@ -1,0 +1,60 @@
+//Colors
+$primaryColor:#0ba3b6;
+$baseFont:'Open sans', sens-serif;
+
+body{
+    font: normal 14px $baseFont; 
+}
+
+.header{
+    .head-bg{
+        background: $primaryColor;
+        height: 500px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    
+    .head-bar{
+        height: 80px;
+        padding: 20px 0;
+        .logo{
+            color: #fff;
+            font-size: 24px;
+        }
+
+
+    }
+}
+        .head-nav{
+            display: block;
+            ul{
+                li{
+                    a{
+                        color: #d1f1f5;
+                        position: relative;
+                        margin: 0 15px;
+                        padding: 15px 0;
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            width: 0%;
+                            height:3px;  
+                            background: #23c7dc;  
+                            bottom: 0;
+                            left: 50%;
+                            transition: all .4s cubic-bezier(0.19, 1, 0.22, 1);
+                        }
+                        &:hover{
+                            background: none;
+                            color: #fff;
+                            &::after{
+                                width: 100%;
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }

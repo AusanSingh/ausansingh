@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+var styles = String(require('./css/styles.scss'));
 @Component({
   selector: 'my-app',
-  template: '<h1 class="text-center">My First Angular App thanks udemy</h1>',
+  template: require('./profile/header.html'),
+  styles: [styles]
 })  
 export class AppComponent { }
