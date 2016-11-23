@@ -1,6 +1,7 @@
 var webpack = require('webpack');
 var htmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports={
     entry: './src/main.ts',
@@ -22,6 +23,9 @@ module.exports={
         new htmlWebpackPlugin({
             template: './src/index.html'
         }),
+        new CopyWebpackPlugin([
+            { from: './src/app/images', to: 'images' }
+        ]),
         new ExtractTextPlugin('./css/styles.css'),
 
         new webpack.DefinePlugin({
