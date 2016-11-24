@@ -6,6 +6,7 @@ $darkText:#444;
 $blueText:#038fbb;
 $bgColor:#efefef;
 $baseFont:'Open Sans', sans-serif;
+$section-bg:#f8f8f8;
 
 body{
     font: normal 14px $baseFont; 
@@ -131,6 +132,7 @@ img{
                         a{
                             color:$lightText;
                             padding: 6px 12px;
+                            font-size: 16px;
                             &:first-child{
                                 padding-left: 0;
                             }
@@ -152,6 +154,53 @@ img{
                 text-transform:uppercase;
                 background:$primaryColor;
                 border-color:$primaryColor;
-                margin-top:50px;
+                margin-top:47px;
             }
+        }
+
+        /*Section*/
+        .section-p{
+             padding: 20px 0;
+        }
+        .section-heading{
+            margin: 0 0 30px;
+            text-transform: uppercase;
+            position: relative;
+            &:after{
+                content:'';
+                width:80px;
+                height:3px;
+                background:rgba(11,163,182,.3);
+                position:absolute;
+                bottom:-10px;
+                left:50%;
+                transform:translateX(-50%)
+            }
+        }
+        /*Section end*/
+
+        /*Skill Section*/
+        .skill-section{
+            .progress-head{
+                font-weight: 600;
+            }
+            .progress{
+                height: 14px;
+                border-radius: 0;
+                background: #b4e1e6;
+                box-shadow: none;
+                .progress-bar{
+                    height: 14px;
+                    line-height: 14px;
+                    font-size: 11px;
+                    background: $primaryColor;
+                    box-shadow: none;
+                }
+            }
+        }
+        /*Skill Section End*/
+
+        /*Education Section*/
+        .education-section{
+            background: $section-bg;
         }
