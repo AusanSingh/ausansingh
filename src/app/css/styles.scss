@@ -1,9 +1,16 @@
 //Colors
 $primaryColor:#0ba3b6;
-$baseFont:'Open sans', sans-serif;
+$primaryLight:#2fd7ec;
+$lightText:#979797;
+$darkText:#444;
+$blueText:#038fbb;
+$bgColor:#efefef;
+$baseFont:'Open Sans', sans-serif;
 
 body{
     font: normal 14px $baseFont; 
+    color: $darkText;
+    background: $bgColor;
 }
 img{
     max-width: 100%;
@@ -47,7 +54,7 @@ img{
                             position: absolute;
                             width: 0%;
                             height:3px;  
-                            background: #23c7dc;  
+                            background: $primaryLight;  
                             bottom: 0;
                             left: 50%;
                             transition: all .4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -61,6 +68,10 @@ img{
                             }
                         }
                     }
+                    &.active a:after{
+                        width: 100%;
+                        left: 0;
+                    }
                 }
             }
         }
@@ -68,4 +79,79 @@ img{
         /*AboutMe*/
         .profile-box{
             background: #fff;
+            margin: 40px 0 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+        }
+        .basic-info{
+            margin: 0 0 30px;
+            border-bottom: 1px dotted #ddd;
+            padding: 15px 30px 0 0;
+            .name {
+                margin-bottom: 0;
+                span {
+                    font-weight: 300;
+                }
+            }
+            .position{
+                margin: 0;
+                color: $blueText;
+            }
+            .about-text{
+                    font-size: 16px;
+                    color: $lightText;
+                    margin: 20px 0 15px;
+                    line-height: 28px;
+                    text-align: justify;
+            }
+        }
+        .about-list{
+            ul{
+                margin: 0;
+                padding: 0;
+                li{
+                    display: block;
+                    margin: 15px 0;
+                    &:after {
+                        clear: both;
+                        content: '';
+                        display: block;
+                    }
+                    strong{
+                        float: left;
+                        width: 100px;
+                        text-transform: uppercase;
+                        font-weight: 600;
+                        font-size: 13px;
+                        color: $darkText;
+                    }
+                    span{
+                        float: left;
+                        display: block;
+                        color: $lightText;
+                        a{
+                            color:$lightText;
+                            padding: 6px 12px;
+                            &:first-child{
+                                padding-left: 0;
+                            }
+                            &:hover{
+                                color: $blueText;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .resume-download {
+            margin:0 0 0 -30px;
+            .btn-primary{
+                border-radius:0;
+                padding:20px 0;
+                font-size:18px;
+                text-transform:uppercase;
+                background:$primaryColor;
+                border-color:$primaryColor;
+                margin-top:50px;
+            }
         }
