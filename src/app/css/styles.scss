@@ -1,12 +1,17 @@
 //Colors
 $primaryColor:#0ba3b6;
 $primaryLight:#2fd7ec;
-$lightText:#979797;
+$lightText:#7b7b7b;
 $darkText:#444;
 $blueText:#038fbb;
 $bgColor:#efefef;
 $baseFont:'Open Sans', sans-serif;
 $section-bg:#f8f8f8;
+
+//Media Query
+$tablet-breakpoint:"(max-width:768px)";
+$medium-device:"(max-width:991px)";
+$mobile-480:"(max-width:480px)";
 
 body{
     font: normal 14px $baseFont; 
@@ -144,9 +149,33 @@ img{
                 }
             }
         }
+         @media #{$medium-device}{
+               .basic-info, .about-list{
+                   margin: 0;
+                   padding: 15px;
+               }
+               .profile-pic{
+                   width: 300px;
+                    height: 300px;
+                    border-radius: 50%;
+                    margin: 15px auto;
+                    overflow: hidden;
+                    text-align: center;
+                    background: #2d2c3b;
+                    @media #{$mobile-480}{
+                        width: 100%;
+                        height: auto;
+                        overflow: visible;
+                        border-radius: 0;
+                    }
+               }
+            }
 
         .resume-download {
-            margin:0 0 0 -30px;
+            margin:47px 0 0 -30px;
+            @media #{$medium-device}{
+               margin: 0; 
+            }
             .btn-primary{
                 border-radius:0;
                 padding:20px 0;
@@ -154,13 +183,30 @@ img{
                 text-transform:uppercase;
                 background:$primaryColor;
                 border-color:$primaryColor;
-                margin-top:47px;
+                i{
+                    transition: all .4s cubic-bezier(0.47, 0, 0.745, 0.715);
+                }
+                i.fa-download{
+                    opacity: 0;
+                    transform: translate(16px, -20px);
+                }
+                &:hover{
+                    i.fa-file-text-o{
+                        opacity: 0;
+                        transform: scale(0);
+                    }
+                    i.fa-download{
+                        opacity: 1;
+                        transform: translate(16px, 0);
+                    }
+                }
             }
         }
+        
 
         /*Section*/
         .section-p{
-             padding: 20px 0;
+             padding: 40px 0;
         }
         .section-heading{
             margin: 0 0 30px;
@@ -183,6 +229,7 @@ img{
         .skill-section{
             .progress-head{
                 font-weight: 600;
+                text-transform: uppercase;
             }
             .progress{
                 height: 14px;
@@ -203,4 +250,60 @@ img{
         /*Education Section*/
         .education-section{
             background: $section-bg;
+        }
+
+        /*Education Section*/
+        .experience-section{
+            background: #fff;
+        }
+
+        /*info-content*/
+        .info-content{
+            position: relative;
+            padding: 15px 0 15px 30px;
+            border-left: 2px solid #ddd;
+            margin-left: 180px;
+            h3{
+                margin: 0;
+            }
+            .tenure{
+                position: absolute;
+                color: $primaryColor;
+                left: -150px;
+                text-align: right;
+                width: 130px;
+                &:after{
+                    content: '';
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 6px;
+                    background: $primaryColor;
+                    position: absolute;
+                    right: -24px;
+                    top: 4px;
+                }
+            }
+            ul{
+                li{
+                    margin: 5px 0;
+                    color: $lightText;
+                }
+            }
+        }
+        @media #{$tablet-breakpoint}{
+             .info-content{
+                    margin:0;
+                    h3{
+                        margin:20px 0 10px;
+                    }
+                    .tenure {
+                        position: relative;
+                        color: #0ba3b6;        
+                        width: 100%;
+                        left:0;
+                        &:after{
+                                left:-36px
+                            }
+                    }
+                }   
         }
