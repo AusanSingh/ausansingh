@@ -13,6 +13,12 @@ $tablet-breakpoint:"(max-width:768px)";
 $medium-device:"(max-width:991px)";
 $mobile-480:"(max-width:480px)";
 
+@mixin vendor-prefix($name, $value) {
+  @each $vendor in ('-webkit-', '-moz-', '-ms-', '') {
+    #{$vendor}#{$name}: #{$value};
+  }
+}
+
 body{
     font: normal 14px $baseFont; 
     color: $darkText;
@@ -307,3 +313,14 @@ img{
                     }
                 }   
         }
+
+
+/* PortFolio*/
+
+.porfolio-cart{
+    background: #fff;
+    @include vendor-prefix('box-shadow', '0 2px 3px rgba(0,0,0,.13)'); 
+    .cart-footer{
+        padding: 5px 12px;
+    }
+}
